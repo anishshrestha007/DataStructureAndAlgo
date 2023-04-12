@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Library App</h1>
+      <button
+        class="add-book-button"
+        id="add-book-button"
+        onclick="handleAddBook()"
+      >
+        Add Book
+      </button>
+      <div class="reviews"></div>
+    </div>
+    <div style="display: none" id="new-form">
+      <h2 class="header">Add New Book</h2>
+      <div>
+        <input type="text" name="title" id="title" placeholder="Book Title" />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Book Author"
+        />
+        <input
+          type="text"
+          name="noOfPages"
+          id="noOfPages"
+          placeholder="No of Pages"
+        />
+
+        <label for="is-read"> Read</label>
+        <input type="checkbox" id="is-read" name="notify" />
+
+        <button onclick="handleBookSave(event)">Save</button>
+        <button onclick="handleBookSaveCancel(event)">Cancel</button>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
