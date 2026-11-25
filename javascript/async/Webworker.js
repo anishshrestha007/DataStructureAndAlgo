@@ -11,7 +11,7 @@ errorFromWorker = (ev) => {
 function init() {
   const workerButton = document.querySelector("#clickWorker");
   if (window.Worker) {
-    let worker = new Worker("Worker.js");
+    let worker = new Worker("./javascript/async/Worker.js");
     worker.addEventListener("message", messageFromWorker);
     worker.addEventListener("error", errorFromWorker);
 
