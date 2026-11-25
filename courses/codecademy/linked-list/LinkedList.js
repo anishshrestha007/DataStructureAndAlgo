@@ -18,7 +18,7 @@ class LinkedList {
     const newTail = new Node(data);
     let currentHead = this.head;
     if (currentHead == null) {
-      currentHead = newTail;
+      this.head = newTail;
     } else {
       while (currentHead.getNextNode() !== null) {
         currentHead = currentHead.getNextNode();

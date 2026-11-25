@@ -9,7 +9,22 @@ const FactoryFunction = (string) => {
 
 const taco = FactoryFunction("taco");
 
-printString(); // ERROR!!
-capitalizeString(); // ERROR!!
-taco.capitalizeString(); // ERROR!!
+// These three fail: printString and capitalizeString only exist inside the factory,
+// and only printString is returned. try/catch lets the file keep running to show each error.
+try {
+  printString(); // ERROR!!
+} catch (e) {
+  console.log("printString() ->", e.message);
+}
+try {
+  capitalizeString(); // ERROR!!
+} catch (e) {
+  console.log("capitalizeString() ->", e.message);
+}
+try {
+  taco.capitalizeString(); // ERROR!!
+} catch (e) {
+  console.log("taco.capitalizeString() ->", e.message);
+}
+
 taco.printString(); // this prints "----TACO----"

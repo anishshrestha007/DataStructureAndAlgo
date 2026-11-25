@@ -17,3 +17,16 @@
   content: "";
   display: table;
 }
+.history {
+  margin-top: 12px;
+}
+.history ol {
+  margin: 4px 0 0;
+  padding-left: 24px;
+}
+.history li {
+  margin: 2px 0;
+}
+.history button[aria-current="step"] {
+  font-weight: bold;
+}

@@ -16,7 +16,7 @@ Person.prototype.Information = function () {
 
 var _person = new Person("Anish Shrestha", 27, "1994/03/01", "Male");
 
-document.write(_person.Information());
+console.log(_person.Information());
 
 //Prototype Inheritance
 
@@ -46,10 +46,17 @@ let car = {
 //   return "Apply Brakes";
 // };
 
+//Instead, add the method to the car object itself
+car.brake = function () {
+  return "Apply Brakes";
+};
+
 let teslaCar = {};
 
 //Now to inherit car
 
 Object.setPrototypeOf(teslaCar, car);
 
+//teslaCar has no methods of its own; both are found on its prototype (car)
+console.log(teslaCar.drive());
 console.log(teslaCar.brake());

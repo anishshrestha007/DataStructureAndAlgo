@@ -33,9 +33,17 @@ async function handleSearchClick() {
   const tempC = document.getElementById("tempC");
   const condition = document.getElementById("condition");
   const conditionImage = document.getElementById("conditionImage");
-  const currentWeather = await getCurrentWeather(
-    locationInput === null ? undefined : locationInput.value
-  );
+  let currentWeather;
+  try {
+    currentWeather = await getCurrentWeather(
+      locationInput === null ? undefined : locationInput.value
+    );
+  } catch (error) {
+    tempC.textContent = "";
+    condition.textContent = `Couldn't load the weather: ${error.message}`;
+    conditionImage.removeAttribute("src");
+    return;
+  }
 
   tempC.innerHTML = `Temperature Celsius : ${currentWeather.current.temp_c}`;
 

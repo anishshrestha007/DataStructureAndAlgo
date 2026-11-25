@@ -1,1 +1,9 @@
 node_modules/
+
+# Local secrets (API keys). Commit a .env.example instead.
+.env
+.env.*
+!.env.example
+
+# Weather App build output: it contains the API key, so build it locally instead of committing it
+projects/weather-app/dist/

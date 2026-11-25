@@ -3,6 +3,7 @@ import testLinkedList from "./TestLinkedList.js";
 function reverseLinkedList(linkedList) {
   // Write your code here
   let currentHead = linkedList.head;
+  if (currentHead === null) return linkedList;
   let nextHead = currentHead.next;
   currentHead.next = null;
   while (nextHead !== null) {
@@ -12,7 +13,9 @@ function reverseLinkedList(linkedList) {
     nextHead = temp;
   }
 
-  return currentHead;
+  // currentHead is now the old tail; make it the list's head and return the list itself
+  linkedList.head = currentHead;
+  return linkedList;
 }
 
 //Calling your function on an example
